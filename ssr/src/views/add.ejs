@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <title>Agregar</title>
+</head>
+<body class="container">
+    <div class="card col-9 mx-auto mt-5">
+        <div class="card-header">
+            <h2 class="my-3 text-center">Agregar Encuesta</h2>
+        </div>
+        <div class="card-body">
+            <form action="/add" method="POST">
+                <div class="mb-3">
+                    <label for="provincia" class="form-label">Provincia:</label>
+                    <input 
+                        type="text"
+                        class="form-control"
+                        name="provincia"
+                    >
+                </div>
+                <div class="mb-3">
+                    <label for="casosConSintomas" class="form-label">Habitantes con síntomas:</label>
+                    <input 
+                        type="number"
+                        class="form-control"
+                        name="casosConSintomas"
+                    >
+                </div>
+                <div class="mb-3">
+                    <label for="casosConfirmados" class="form-label">Habitantes confirmados:</label>
+                    <input 
+                        type="number"
+                        class="form-control"
+                        name="casosConfirmados"
+                    >
+                </div>
+                <div class="mb-3">
+                    <label for="casosSinCOVID" class="form-label">Habitantes que nunca han tenido COVID:</label>
+                    <input 
+                        type="number"
+                        class="form-control"
+                        name="casosSinCOVID"
+                    >
+                </div>
+                <button
+                class="btn btn-primary w-100"
+                    type="submit"
+                >Agregar</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

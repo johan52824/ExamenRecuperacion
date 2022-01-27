@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <title>Index</title>
+</head>
+<body class="container">
+    <div class="card mt-5">
+        <div class="card-header">
+            <h2 class="my-3">Encuestas de COVID en la provincias del ecuador 2022</h2>
+        </div>
+        <div class="card-body">
+            <a 
+                href="/add"
+                class="btn btn-success"
+            >Agregar encuesta</a>
+            <table class="table table-success table-striped my-2">
+                <thead>
+                    <th>Provincia</th>
+                    <th>Habitantes con síntomas</th>
+                    <th>Habitantes confirmados</th>
+                    <th>Habitantes que nunca han presentado síntomas</th>
+                    <th>Acción</th>
+                </thead>
+                <tbody>
+                    <% for(let i=0; i < data.length; i++) { %>
+                        <tr>
+                            <td><%= data[i].provincia %></td>
+                            <td><%= data[i].casosConSintomas %></td>
+                            <td><%= data[i].casosConfirmados %></td>
+                            <td><%= data[i].casosSinCOVID %></td>
+                            <td>
+                                <a 
+                                    class="btn btn-warning mx-3"
+                                    href="/edit/<%= data[i]._id %>"
+                                >Editar</a>
+                                <a 
+                                    class="btn btn-danger mt-1"
+                                    href="/delete/<%= data[i]._id %>"
+                                >Eliminar</a>
+                            </td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
